@@ -1,0 +1,22 @@
+{
+  "name": "scrapemanager",
+  "version": "0.1.0",
+  "description": "Framework for scraping and scheduling",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run compile && npm run execute",
+    "compile": "tsc",
+    "execute": "node ./build/bootstrap.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-json-db": "^0.9.0",
+    "puppeteer": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.11.7",
+    "@types/puppeteer": "^1.9.0",
+    "typescript": "^3.1.1"
+  }
+}

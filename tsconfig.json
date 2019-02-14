@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "target": "es2017",
+    "lib": [
+      "es5",
+      "es2017",
+      "dom"
+    ],
+    "module": "commonjs",
+    "sourceMap": false,
+    "removeComments": true,
+    "downlevelIteration": true,
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
