@@ -9,7 +9,7 @@ Add a new javascript file to the jobs folder following this template:
 ```javascript
 const JobConfigFactory = require(`JobConfigFactory`);
 
-const uuid = `QGyYooyJnWfuyQ3kc16bn`; // Change this manually for now >.<
+const uuid = `3b2254e5-0ece-440f-9062-61ec005945bf`; // Add UUID manually
 const name = ``; // Add own name of job
 const interval = 3600;  // Set how often the job runs (seconds)
 const puppeteerConfig = {}; // Set Puppeteer config needed here

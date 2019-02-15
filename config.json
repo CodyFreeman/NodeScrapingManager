@@ -1,4 +1,4 @@
 {
-    "jobDir": "testJobList/",
+    "jobDir": "jobs/",
     "logFile": "activity"
 }
