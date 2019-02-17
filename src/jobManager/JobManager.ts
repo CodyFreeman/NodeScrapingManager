@@ -50,7 +50,7 @@ class JobManager {
                 const lastError = this.findLast(jobHistory, 'success', false);
 
                 // Does not add job to que if within error timeout
-                if (!lastError || !lastError.timestamp || lastError.timestamp + job.config.retryDelay > now) { // TODO: consider moving hardcoded timeout to job config and a default value to app config
+                if (!lastError || !lastError.timestamp || lastError.timestamp + job.config.retryDelay > now) {
                     return false;
                 }
                 return true;
@@ -70,7 +70,7 @@ class JobManager {
                     this.logger.log(job.uuid, new ActivityLogEntry(Math.floor(new Date().getTime() / 1000), true, `job ${job.uuid} successfully executed`));
                 }
             } catch (error) {
-                this.logger.log(job.uuid, new ActivityLogEntry(Math.floor(new Date().getTime() / 1000), false, `error proccessing job: ${job.uuid}. ${error.message}` || `error proccessing job: ${job.uuid}. No error message detected`));
+                this.logger.log(job.uuid, new ActivityLogEntry(Math.floor(new Date().getTime() / 1000), false, `error proccessing job: ${job.uuid || 'no job uuid detected'}. ${error.message || 'no error message detected'}`));
                 continue;
             }
         }
@@ -87,7 +87,7 @@ class JobManager {
 
         } catch (error) {
             runner.kill();
-            this.logger.log(job.uuid, new ActivityLogEntry(Math.floor(new Date().getTime() / 1000), false, error.message || `unknown error executing: ${job.uuid}`));
+            this.logger.log(job.uuid, new ActivityLogEntry(Math.floor(new Date().getTime() / 1000), false, error.message || `unknown error executing: ${job.uuid || 'unknown job'}`));
 
             return false;
         }

@@ -7,8 +7,7 @@ const JsonDB = require('node-json-db');
 let fs = require('fs');
 
 const config = JSON.parse(fs.readFileSync(`./config.json`));
-
-const activityDB = new JsonDB(config.logDB || "activityLog");
+const activityDB = new JsonDB(config.logFile || "activityLog");
 const activityLogger = new ActivityRepo(activityDB);
 const jobManagerRepo = new JobManagerRepo();
 const jobRunnerFactory = new JobRunnerFactory();
