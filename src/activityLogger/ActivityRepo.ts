@@ -9,10 +9,6 @@ class ActivityRepo {
     }
 
     public log(jobUuid: string, data: ActivityLogEntry) {
-
-        if (!this.db.exists(`/${jobUuid}/log`)) {
-            this.createField(`/${jobUuid}/log[]`)
-        }
         this.db.push(`/${jobUuid}/log[]`, data);
     }
 
@@ -22,10 +18,6 @@ class ActivityRepo {
             return null;
         }
         return this.db.getData(`/${jobUuid}/log`);
-    }
-
-    private createField(path) {
-        this.db.push(path);
     }
 }
 
