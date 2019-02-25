@@ -1,10 +1,35 @@
 # Node Scraping Manager
 
-## Jobs
+## Setup
 
-### Adding a job:
+### Building Project:
 
-Add a new javascript file to the jobs folder following this template:
+Run `git clone https://github.com/CodyFreeman/NodeScrapingManager.git`
+
+Enter the newly created folder with `cd NodeScrapingManager`
+
+Run `npm install` to install all dependencies including chrome.
+
+Run `npm run compile` to build the project.
+
+## Usage
+
+### Running Jobs:
+
+If you have followed Setup instructions you can run the project with `npm run execute`. This will run all jobs in `/build/jobs/` including the example job.
+
+If you wish to rebuild the project and then run all jobs use `npm start`.
+
+## Jobs:
+
+### File based jobs:
+
+This project uses the filesystem extensively and jobs are no exception. The scraper will automatically run any jobs found in the `/bulid/jobs/` folder when the scraping manager is run.
+
+### Adding a Job:
+If you wish to develop a job with typescript and recompile the project with your job: You can add a new `.ts` file to the `/src/jobs/` using `/src/jobs/exampleJob.ts` as a template.
+
+If you wish to add a job to a running process already built and setup: you can add a new `.js` file to the `/build/jobs/` folder following this template:
 
 ```javascript
 const JobConfigFactory = require(`JobConfigFactory`);
