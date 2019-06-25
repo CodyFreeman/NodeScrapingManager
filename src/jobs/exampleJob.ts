@@ -10,7 +10,7 @@ const name = `example job`;
 const interval = 3;
 const puppeteerConfig = {
     headless: false,
-    args: ['--window-size=1600,900'],
+    args: ['--window-size=1600,900', `--autoplay-policy=no-user-gesture-required`],
     defaultViewport: { width: 1600, height: 900 }
 };
 
